@@ -582,10 +582,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 wv.setPadding(0, statusBar, 0, 0);
 
                 // Cập nhật CSS biến keyboard height
-                wv.evaluateJavascript(
-                        "document.documentElement.style.setProperty('--f7-keyboard-height','" + dpToPx(imeHeight) + "px');",
-                        null
-                );
+                String js = "if(document && document.documentElement) {" +
+                        "document.documentElement.style.setProperty('--f7-keyboard-height','" + dpToPx(imeHeight) + "px');" +
+                        "}";
+                wv.evaluateJavascript(js, null);
+
 
                 // Scroll input focus nếu bàn phím hiện
                 if (isKeyboardVisible) {
@@ -617,10 +618,11 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                     wv.setPadding(0, statusBar, 0, 0);
 
                     // CSS keyboard height
-                    wv.evaluateJavascript(
-                            "document.documentElement.style.setProperty('--f7-keyboard-height','" + dpToPx(keyboardHeight) + "px');",
-                            null
-                    );
+                    String js = "if(document && document.documentElement) {" +
+                            "document.documentElement.style.setProperty('--f7-keyboard-height','" + dpToPx(keyboardHeight) + "px');" +
+                            "}";
+                    wv.evaluateJavascript(js, null);
+
 
                     if (isKeyboardVisible) {
                         // Bàn phím show
@@ -898,8 +900,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 String url = request.getUrl().toString();
                 Log.d("WebView", "Intercept: " + url);
 
-                // Nếu web gọi sai https://ids.ezs.vn/vendor.js thì bẻ sang file trong assets
-                if (url.equals("https://ids.ezs.vn/vendor.js")) {
+                // Nếu web gọi https://ids.ezs.vn/AppCoreV2/assets/js/vendor.js thì bẻ sang file trong assets
+                if (url.endsWith("/vendor.js")) {
                     try {
                         InputStream is = getAssets().open("assets/js/vendor.js");
                         return new WebResourceResponse("application/javascript", "UTF-8", is);
