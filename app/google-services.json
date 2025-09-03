@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "651670456510",
+    "project_id": "ezs-spa",
+    "storage_bucket": "ezs-spa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651670456510:android:e02445b5d9196fd9f236ef",
+        "android_client_info": {
+          "package_name": "vn.ezsspa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651670456510-6jr8punliv9j36v2ngrbdf1a2qiuifu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHbDh9uVd2gB-YGszkm7uQPpwAVCJMQME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651670456510-6jr8punliv9j36v2ngrbdf1a2qiuifu1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "651670456510-9kbh2rs9osne3e66nhrt3l1tatjp4q9i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "vn.ezsspa"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

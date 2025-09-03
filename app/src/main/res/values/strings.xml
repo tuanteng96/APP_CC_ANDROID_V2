@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EZS SPA</string>
+    <string name="app_domain">https://ids.ezs.vn</string>
+    <string name="default_notification_channel_id">default</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
