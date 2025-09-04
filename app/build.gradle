@@ -11,6 +11,7 @@ android {
         versionCode 1
         versionName "1"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        ndkVersion = "29.0.14033849"
     }
     buildTypes {
         release {
@@ -34,7 +35,6 @@ android {
             versionName "1"
         }
     }
-
 }
 
 repositories {
