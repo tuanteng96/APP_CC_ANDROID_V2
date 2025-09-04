@@ -93,7 +93,7 @@ Thay đổi cấu hình cho từng app
 bao gồm:
 - màu thương hiệu /res/color.xml
 - Tên domain thương hiệu /res/string.xml
-- Firebase notifiction /assets/google-service.json
+- Firebase notifiction /packages/google-service.json
 */
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
@@ -623,7 +623,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                             "}";
                     wv.evaluateJavascript(js, null);
 
-
                     if (isKeyboardVisible) {
                         // Bàn phím show
                     }
@@ -900,10 +899,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 String url = request.getUrl().toString();
                 Log.d("WebView", "Intercept: " + url);
 
-                // Nếu web gọi https://ids.ezs.vn/AppCoreV2/assets/js/vendor.js thì bẻ sang file trong assets
+                // Nếu web gọi https://ids.ezs.vn/AppCoreV2/assets/js/vendor.js thì bẻ sang file trong packages
                 if (url.endsWith("/vendor.js")) {
                     try {
-                        InputStream is = getAssets().open("assets/js/vendor.js");
+                        InputStream is = getAssets().open("packages/js/vendor.js");
                         return new WebResourceResponse("application/javascript", "UTF-8", is);
                     } catch (IOException e) {
                         e.printStackTrace();
